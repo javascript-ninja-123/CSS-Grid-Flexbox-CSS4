@@ -1,0 +1,165 @@
+*{
+  margin:0;
+  padding:0;
+  text-decoration: none;
+}
+
+html{
+  font-size:100%;
+}
+
+body{
+  margin:0;
+  padding:0;
+  width:80vw;
+  margin:0 10vw;
+}
+
+nav{
+  height:60px;
+  position: fixed;
+  background:pink;
+  width:80vw;
+  filter:blur(10px);
+}
+.main{
+  padding-top:60px;
+}
+.box1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background:tomato;
+  color:white;
+  padding:30px 0;
+  width:100%;
+  text-align: center;
+  height:100px;
+}
+
+main section:first-child{
+  background: gold;
+}
+
+ul{
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+main section:first-child a{
+  width:60%;
+}
+main section:first-child a,main section:first-child ul{
+    display: inline-block;
+}
+main section:first-child ul{
+  width:calc(100% - (60% + 5px));
+  text-align: right;
+}
+
+
+main section:first-child li{
+  display: inline-block;
+  padding:10px;
+}
+
+
+main section:nth-child(2){
+  background:tomato;
+  color:white;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding:1em 1em;
+  height:70px;
+  box-sizing: border-box;
+}
+main section:nth-child(2) a{
+  flex:2;
+}
+main section:nth-child(2) a ul{
+  flex:1;
+}
+
+
+main section:nth-child(2) li{
+  display: inline-block;
+  padding:0 10px;
+}
+
+main section:nth-child(3){
+  background:skyblue;
+  color:white;
+  font-weight: bold;
+  height:70px;
+  vertical-align: middle;
+}
+
+main section:nth-child(3) a, main section:nth-child(3) ul{
+  display: inline-block;
+  vertical-align: middle;
+    height:100%;
+}
+
+main section:nth-child(3) ul li{
+  display: inline-block;
+}
+
+main section:not(:first-child){
+  height:200px;
+}
+/*  this is another section*/
+main section:nth-child(4){
+  border:1px solid black;
+  position:relative;
+  padding:10px 0;
+}
+main section:nth-child(4) p{
+  color:white;
+  font-size:20px;
+  background:tomato;
+  position:absolute;
+  right:5px;
+  top:5px;
+}
+
+
+main section:nth-child(5){
+  border:1px solid pink;
+  height:100%;
+}
+main section:nth-child(5) > div {
+  padding: 10px 0;
+}
+main section:nth-child(5) > div > div{
+  padding: 0px 10px;
+  margin:10px 0;
+  background:lightgrey;
+  color:white;
+}
+
+main section:nth-child(5) > div > div:first-child{
+  background:tomato;
+  position:sticky;
+  top:30px;
+}
+
+main section:nth-child(6){
+  background:purple;
+  color:white;
+  font-size:3rem;
+  position: relative;
+  text-align: center;
+  padding:10vmax 0;
+}
+
+/* main section:nth-child(6) > div {
+  width:100vw;
+  height:100vh;
+  top:0;
+  left:0;
+  position:fixed;
+  background-color:rgba(0,0,0,0.8)
+} */
