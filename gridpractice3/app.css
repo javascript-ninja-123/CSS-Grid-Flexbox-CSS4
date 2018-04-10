@@ -1,0 +1,248 @@
+body{
+  margin:0;
+  padding:0;
+}
+
+.container{
+  display: grid;
+  grid-gap:1rem;
+  height:50vh;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.container > div{
+  background:skyblue;
+}
+
+.container > div:nth-child(5){
+  grid-row:2 / span 2;
+  background:gold;
+}
+
+.container > div:nth-child(9){
+  grid-column: 2 / span 3;
+  background:tomato;
+}
+
+.container2{
+  display:grid;
+  grid-gap:1rem;
+  height:50vh;
+  grid-template-columns:
+  [left-side-bar-start] auto
+  [main-content-start] 60%
+  [right-side-bar-start] auto;
+
+  grid-template-rows:
+  [body-start] 70%
+  [footer-start] auto;
+}
+
+
+
+.container2 > div {
+  background:palegoldenrod;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.container2 > footer{
+  background:green;
+  grid-column: 2 / -1;
+}
+
+ .left-sidebar{
+  grid-row:body-start / -1;
+}
+
+
+.container3{
+  display:grid;
+  height:50vh;
+  grid-gap:1rem;
+  grid-template-areas: "header header"
+                         "aside section"
+                         "aside footer";
+  grid-template-rows:1fr 4fr 1fr;
+  grid-template-columns: 2fr 6fr;
+}
+
+.box{
+  background:dodgerblue;
+}
+
+.a{
+  grid-area:header;
+}
+.b{
+  grid-area:aside;
+}
+.c{
+  grid-area:section;
+}
+.d{
+  grid-area:footer;
+}
+
+@media (max-width:430px){
+  .container3{
+    grid-template-areas: "header"
+                         "section"
+                         "aside"
+                         "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 4fr 1fr;
+  }
+}
+
+.container4{
+  height:100vh;
+  display:grid;
+  grid-gap:1rem;
+  grid-template-columns: minmax(min-content,1fr) minmax(min-content,4fr);
+
+}
+
+.container4 > .boxmon{
+  background:mediumpurple;
+}
+
+
+.container5{
+  height:100vh;
+  display: grid;
+  grid-gap:1rem;
+  grid-template-columns:
+  repeat(2, 1fr 2fr);
+  grid-template-rows:1fr 2fr;
+}
+
+.container5 > div {
+  background:orangered;
+}
+
+
+
+.container5 > div:nth-of-type(6){
+  grid-column: 2/ -1;
+}
+
+
+.container6 {
+  height:100vh;
+  display:grid;
+  grid-gap:0.2rem;
+  grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+  grid-template-rows: repeat(auto-fit,minmax(250px,auto))
+  justify-content: center;
+  align-items: stretch;
+}
+
+.container6 > div{
+  background:gold;
+}
+
+
+.container7{
+  height:100vh;
+  display:grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows:repeat(4,1fr);
+  grid-auto-flow: column;
+}
+
+.container7 > .grid-item{
+  background-color:orange;
+}
+
+.container7 > .grid-item:nth-of-type(3),
+.container7 > .grid-item:nth-of-type(4){
+  grid-column: span 3;
+}
+
+
+.container8{
+  height:100vh;
+  display:grid;
+  grid-gap:1rem;
+  grid-template-rows: 4fr 6fr;
+  grid-auto-rows: 1fr 12fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px,auto));
+}
+
+.container8 > .grid-item{
+  background:lightpink;
+}
+
+
+.container9{
+  height:100vh;
+  display:grid;
+  grid-gap:1rem;
+}
+
+.container9 > .grid-item{
+  background:yellowgreen;
+}
+
+
+.container9 > .grid-item:nth-of-type(5){
+  order:-1;
+}
+
+
+.container10{
+  height:100vh;
+  display: grid;
+  grid-gap:1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px,auto));
+}
+
+.container10 > div {
+  background:dodgerblue;
+}
+
+.container10 > .nested{
+  background: none;
+  display:grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr)
+}
+.container10 > .nested > .grid-item{
+  background:green;
+}
+
+.container11{
+  height:100vh;
+  display:grid;
+  grid-gap:1rem;
+  grid-template-areas: "nav1 nav2 nav3"
+                       "main main nav3"
+                       "main main nav3";
+ grid-template-rows:
+   [header-top] 1fr [header-bottom main-top] 5fr [main-bottom];
+ grid-template-columns: 2fr auto 1fr;
+                      
+}
+
+.container11 > * {
+  background:pink;
+}
+
+.container11 > aside:nth-of-type(1){
+  grid-area: nav1;
+}
+.container11 > aside:nth-of-type(2){
+  grid-area: nav2;
+}
+
+.container11 > aside:nth-of-type(3){
+  grid-area: nav3;
+}
+.container11 > main{
+  grid-area: main;
+}
